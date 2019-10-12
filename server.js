@@ -2,8 +2,15 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
-// Install axios
 const axios = require('axios');
+
+// db models
+const db = require('./models');
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
+
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -17,7 +24,6 @@ if (process.env.NODE_ENV === "production") {
 app.get("/api/books", (req, res) => {
   console.log("This route works");
 })
-
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
