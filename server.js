@@ -3,6 +3,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const axios = require('axios');
+const mongoose = require('mongoose');
 
 // db models
 const db = require('./models');
@@ -22,7 +23,14 @@ if (process.env.NODE_ENV === "production") {
 
 // Google Book Search
 app.get("/api/books", (req, res) => {
-  console.log("This route works");
+  res.send("This works");
+})
+
+app.post("/api/submit", (req, res) => {
+  db.Book.create(req.body)
+    .then(dbBook => {
+      res.json(dbBook);
+    });
 })
 
 app.get("*", function (req, res) {
