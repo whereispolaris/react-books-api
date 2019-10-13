@@ -14,6 +14,9 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googleBooks";
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
+// Debug Mongoose
+mongoose.set('debug', true);
+
 // Use morgan logger for logging requests
 app.use(logger("dev"));
 // Parse request body as JSON
