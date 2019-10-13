@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
 import Jumbotron from "./components/Jumbotron";
-import BookSearch from "./components/BookSearch";
-import BookResults from "./components/BookResults";
+import Home from "./components/Home";
 import Saved from "./components/Saved";
 import NotFound from "./components/NotFound";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -18,7 +17,7 @@ const App = () => {
         <Jumbotron />
         <div className="container-fluid">
           <Switch>
-            <Route exact path="/" component={BookSearch, BookResults} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/saved" component={Saved} />
             <Route component={NotFound} />
           </Switch>
