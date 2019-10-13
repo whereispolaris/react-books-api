@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from './components/Header';
 import Jumbotron from "./components/Jumbotron";
+import BookSearch from "./components/BookSearch";
 import "./App.css";
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Jumbotron />
+        <BookSearch />
       </div>
     );
   }
