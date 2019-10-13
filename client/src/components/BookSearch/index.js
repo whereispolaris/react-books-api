@@ -3,7 +3,7 @@ import React from "react";
 const BookSearch = () => {
     return (
         <div className="card">
-            <div class="card-header">
+            <div className="card-header">
                 Book Search
             </div>
             <div className="card-body">

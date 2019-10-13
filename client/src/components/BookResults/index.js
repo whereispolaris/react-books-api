@@ -4,7 +4,7 @@ import Book from "../Book";
 const BookResults = (props) => {
     return (
         <div className="card">
-            <div class="card-header">
+            <div className="card-header">
                 Resutls
             </div>
             <div className="card-body">

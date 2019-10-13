@@ -16,8 +16,8 @@ const Book = (props) => {
                     </div>
                 </div>
                 <div className="col-md-1">
-                    <button type="button" class="btn btn-secondary">Save Book</button>
-                    <button type="button" class="btn btn-dark">View Book</button>
+                    <button type="button" className="btn btn-secondary">Save Book</button>
+                    <button type="button" className="btn btn-dark">View Book</button>
                 </div>
             </div>
         </div>
