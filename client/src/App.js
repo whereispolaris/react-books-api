@@ -15,9 +15,10 @@ const App = () => {
     <BrowserRouter>
       <div>
         <Header />
+        <Jumbotron />
         <div className="container-fluid">
           <Switch>
-            <Route exact path="/" component={Jumbotron, BookSearch, BookResults} />
+            <Route exact path="/" component={BookSearch, BookResults} />
             <Route exact path="/saved" component={Saved} />
             <Route component={NotFound} />
           </Switch>
