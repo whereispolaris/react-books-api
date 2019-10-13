@@ -30,6 +30,9 @@ app.post("/api/submit", (req, res) => {
   db.Book.create(req.body)
     .then(dbBook => {
       res.json(dbBook);
+    })
+    .catch(err => {
+      res.json(err);
     });
 })
 
