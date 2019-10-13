@@ -41,7 +41,7 @@ app.get("/api/books/:book", (req, res) => {
 })
 
 // Saves Book to MongoDB - Not Working Yet
-app.post("/api/submit", (req, res) => {
+app.post("/api/save-book", (req, res) => {
   db.Book.create(req.body)
     .then(dbBook => {
       res.json(dbBook);
@@ -52,7 +52,7 @@ app.post("/api/submit", (req, res) => {
 })
 
 // View All Saved Books - Not Working Yet
-app.get("/api/saved", (req, res) => {
+app.get("/api/books", (req, res) => {
   db.Book.find({})
     .then(dbArticle => {
       res.json(dbArticle);
