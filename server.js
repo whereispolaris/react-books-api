@@ -25,15 +25,19 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-
-// Send every request to the React app
-// Define any API routes before this runs
-
 // Google Book Search
-app.get("/api/books", (req, res) => {
-  res.send("This works");
+app.get("/api/books/:book", (req, res) => {
+  axios.get("https://www.googleapis.com/books/v1/volumes?q=" + req.params.book)
+    .then((response) => {
+      console.log("response", response.data)
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.log("error", error);
+    })
 })
 
+// Saves Book to MongoDB - Not Working Yet
 app.post("/api/submit", (req, res) => {
   db.Book.create(req.body)
     .then(dbBook => {
@@ -44,7 +48,7 @@ app.post("/api/submit", (req, res) => {
     });
 })
 
-// View All Saved Books
+// View All Saved Books - Not Working Yet
 app.get("/api/saved", (req, res) => {
   db.Book.find({})
     .then(dbArticle => {
@@ -55,6 +59,7 @@ app.get("/api/saved", (req, res) => {
     })
 })
 
+// Send every request to the React app - Define any API routes before this runs
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
