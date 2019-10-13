@@ -5,13 +5,14 @@ const Header = () => {
         <div className="container">
             <ul className="nav">
                 <li className="nav-item">
-                    <a className="nav-link active" href="#">LOGO</a>
+                    <a className="nav-link active" href="/">REACT BOOKS</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Search</a>
+                    {/* Search: onClick focus on Search Bar */}
+                    <a className="nav-link" href="/">Search</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Saved</a>
+                    <a className="nav-link" href="/saved">Saved</a>
                 </li>
             </ul>
         </div>
