@@ -1,18 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <div className="container">
             <ul className="nav">
                 <li className="nav-item">
-                    <a className="nav-link active" href="/">REACT BOOKS</a>
+                    <Link className="nav-link active" to={"/"}>REACT BOOKS</Link>
                 </li>
                 <li className="nav-item">
                     {/* Search: onClick focus on Search Bar */}
-                    <a className="nav-link" href="/">Search</a>
+                    <Link className="nav-link" to={"/"}>Search</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="/saved">Saved</a>
+                    <Link className="nav-link" to={"/saved"}>Saved</Link>
                 </li>
             </ul>
         </div>
