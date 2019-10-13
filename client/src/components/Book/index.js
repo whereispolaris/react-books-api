@@ -3,7 +3,7 @@ import './Book.css'
 
 const Book = (props) => {
     return (
-        <div className="card">
+        <div className="card book-card">
             <div className="row no-gutters">
                 <div className="col-md-2">
                     <img src={props.image} className="card-img" alt="" />
