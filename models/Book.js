@@ -13,23 +13,23 @@ const BookSchema = new Schema({
     authors: {
         type: String,
         trim: true,
-        required: "Title is Required"
+        required: "Authors is Required"
     },
     description: {
         type: String,
         trim: true,
-        required: "Title is Required"
+        required: "Description is Required"
     },
     image: {
         type: String,
         trim: true,
-        required: "Title is Required"
+        required: "Image is Required"
     },
     link: {
         type: String,
         trim: true,
-        required: "Title is Required"
-    },
+        required: "Link is Required"
+    }
 });
 
 // Creating book model
