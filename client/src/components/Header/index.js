@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
     return (
-        <div className="container-fluid">
+        <div className="container">
             <ul className="nav">
                 <li className="nav-item">
                     <a className="nav-link active" href="#">LOGO</a>
