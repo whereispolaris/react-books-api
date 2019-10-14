@@ -28,7 +28,7 @@ class BookSearch extends Component {
 
         let bookObject = {
             "title": title,
-            "authors": author,
+            "authors": author.join(","),
             "description": description,
             "image": image,
             "link": link
@@ -80,10 +80,10 @@ class BookSearch extends Component {
                                     image={book.volumeInfo.imageLinks.thumbnail}
                                     title={book.volumeInfo.title}
                                     description={book.volumeInfo.description}
-                                    author={book.volumeInfo.authors[0]}
+                                    author={book.volumeInfo.authors}
                                     handleSaveDelete={() => this.handleSave(
                                         book.volumeInfo.title,
-                                        book.volumeInfo.authors[0],
+                                        book.volumeInfo.authors,
                                         book.volumeInfo.description,
                                         book.volumeInfo.imageLinks.thumbnail,
                                         book.volumeInfo.previewLink)}
