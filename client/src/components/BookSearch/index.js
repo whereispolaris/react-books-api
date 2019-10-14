@@ -24,6 +24,10 @@ class BookSearch extends Component {
         this.setState({ results: [] });
     }
 
+    handleSave = event => {
+        event.preventDefault();
+        console.log("Save button is pressed");
+    }
 
     render() {
         return (
@@ -64,6 +68,7 @@ class BookSearch extends Component {
                                     title={book.volumeInfo.title}
                                     description={book.volumeInfo.description}
                                     author={book.volumeInfo.author}
+                                    handleSaveDelete={this.handleSave}
                                 />
                             ))
                         }

@@ -17,7 +17,7 @@ const Book = (props) => {
                     </div>
                 </div>
                 <div className="col-md-1">
-                    <button type="button" className="btn btn-secondary">{props.isSaved ? "Delete Book" : "Save Book"}</button>
+                    <button onClick={props.handleSaveDelete} type="button" className="btn btn-secondary">{props.isSaved ? "Delete Book" : "Save Book"}</button>
                     <button type="button" className="btn btn-dark">View Book</button>
                 </div>
             </div>
