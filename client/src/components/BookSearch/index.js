@@ -24,9 +24,22 @@ class BookSearch extends Component {
         this.setState({ results: [] });
     }
 
-    handleSave = event => {
-        event.preventDefault();
-        console.log("Save button is pressed");
+    handleSave = (title, author, description, image, link) => {
+
+        let bookObject = {
+            "title": title,
+            "authors": author,
+            "description": description,
+            "image": image,
+            "link": link
+        }
+        axios.post("/api/save-book", bookObject).then(function (response) {
+            console.log(response);
+        })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     }
 
     render() {
@@ -67,8 +80,13 @@ class BookSearch extends Component {
                                     image={book.volumeInfo.imageLinks.thumbnail}
                                     title={book.volumeInfo.title}
                                     description={book.volumeInfo.description}
-                                    author={book.volumeInfo.author}
-                                    handleSaveDelete={this.handleSave}
+                                    author={book.volumeInfo.authors[0]}
+                                    handleSaveDelete={() => this.handleSave(
+                                        book.volumeInfo.title,
+                                        book.volumeInfo.authors[0],
+                                        book.volumeInfo.description,
+                                        book.volumeInfo.imageLinks.thumbnail,
+                                        book.volumeInfo.previewLink)}
                                 />
                             ))
                         }
