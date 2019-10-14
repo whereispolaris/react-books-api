@@ -50,6 +50,13 @@ app.post("/api/save-book", (req, res) => {
       res.json(err);
     });
 })
+// Deletes Book to MongoDB - Not Working Yet
+app.post("/api/books/:bookID", (req, res) => {
+  db.Book.deleteOne({
+    _id: req.params.bookID
+  }).then()
+  res.send("It's working!");
+})
 
 // View All Saved Books - Not Working Yet
 app.get("/api/books", (req, res) => {

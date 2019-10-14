@@ -6,8 +6,11 @@ const Saved = (props) => {
 
     const [books, setBooks] = useState([]);
 
-    const handleDelete = event => {
-        console.log("Delete button was pressed")
+    const handleDelete = (bookID) => {
+        console.log("Delete button was pressed, and the book ID is" + bookID);
+        axios.post("/api/books/" + bookID).then(response => {
+            alert(response);
+        })
     }
 
     useEffect(() => {
@@ -32,7 +35,7 @@ const Saved = (props) => {
                             title={book.title}
                             description={book.description}
                             author={book.author}
-                            handleSaveDelete={handleDelete}
+                            handleSaveDelete={() => handleDelete(book._id)}
                         />
                     ))
                 }
