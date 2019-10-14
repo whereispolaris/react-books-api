@@ -7,11 +7,9 @@ const Saved = (props) => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        axios
-            .get("/api/books")
-            .then(response => {
-                setBooks(response.data)
-            });
+        axios.get("/api/books").then(response => {
+            setBooks(response.data)
+        });
     }, []);
 
 

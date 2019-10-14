@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import Book from "../Book";
 const axios = require('axios');
 
-
 class BookSearch extends Component {
-
     state = {
-        value: ""
+        value: "",
+        results: []
     }
 
     handleValueChange = (e) => {
@@ -16,9 +15,13 @@ class BookSearch extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         const input = this.state.value
-        // axios.get("")
+        axios.get("/api/books/" + input).then(response => {
+            this.setState({ results: response.data.items });
+        })
+
         // Reset form
         this.setState({ value: '' });
+        this.setState({ results: [] });
     }
 
 
@@ -52,12 +55,20 @@ class BookSearch extends Component {
                         Results
                 </div>
                     <div className="card-body">
-                        <Book
-                            image={"http://books.google.com/books/content?id=FzVjBgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"}
-                            title={"The Alchemist"}
-                            description={"A special 25th anniversary edition of the extraordinary international bestseller, including a new Foreword by Paulo Coelho. Combining magic, mysticism, wisdom and wonder into an inspiring tale of self-discovery, The Alchemist has become a modern classic, selling millions of copies around the world and transforming the lives of countless readers across generations. Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest will lead him to riches far different—and far more satisfying—than he ever imagined. Santiago's journey teaches us about the essential wisdom of listening to our hearts, of recognizing opportunity and learning to read the omens strewn along life's path, and, most importantly, to follow our dreams."}
-                            author={"Paulo Cohelo"}
-                        />
+                        {
+                            this.state.results.map((book, index) => (
+                                <Book
+                                    isSaved={false}
+                                    key={index}
+                                    image={book.volumeInfo.imageLinks.thumbnail}
+                                    title={book.volumeInfo.title}
+                                    description={book.volumeInfo.description}
+                                    author={book.volumeInfo.author}
+                                />
+                            ))
+                        }
+
+
                     </div>
                 </div>
             </div>
