@@ -34,7 +34,7 @@ class BookSearch extends Component {
             "link": link
         }
         axios.post("/api/save-book", bookObject).then(function (response) {
-            console.log(response);
+            alert("Book Saved!");
         })
             .catch(function (error) {
                 console.log(error);
