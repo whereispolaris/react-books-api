@@ -10,6 +10,10 @@ const Saved = (props) => {
         console.log("Delete button was pressed, and the book ID is" + bookID);
         axios.post("/api/books/" + bookID).then(response => {
             alert(response);
+            // Render books again
+            axios.get("/api/books").then(response => {
+                setBooks(response.data)
+            });
         })
     }
 
