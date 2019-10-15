@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import bookLogo from "./books.png"
+import "./Header.css";
 
 const Header = () => {
     return (
@@ -11,10 +12,10 @@ const Header = () => {
                 </li>
                 <li className="nav-item">
                     {/* Search: onClick focus on Search Bar */}
-                    <Link className="nav-link" to={"/"}>Search</Link>
+                    <Link className="nav-link link" to={"/"}>Search</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to={"/saved"}>Saved</Link>
+                    <Link className="nav-link link" to={"/saved"}>Saved</Link>
                 </li>
             </ul>
         </div>
