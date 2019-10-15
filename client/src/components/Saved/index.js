@@ -9,7 +9,7 @@ const Saved = (props) => {
     const handleDelete = (bookID) => {
         console.log("Delete button was pressed, and the book ID is" + bookID);
         axios.post("/api/books/" + bookID).then(response => {
-            alert(response);
+            alert("Book deleted!");
             // Render books again
             axios.get("/api/books").then(response => {
                 setBooks(response.data)
