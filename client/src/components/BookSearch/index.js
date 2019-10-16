@@ -82,12 +82,13 @@ class BookSearch extends Component {
                                     title={book.volumeInfo.title}
                                     description={book.volumeInfo.description}
                                     author={book.volumeInfo.authors}
+                                    bookLink={book.volumeInfo.infoLink}
                                     handleSaveDelete={() => this.handleSave(
                                         book.volumeInfo.title,
                                         book.volumeInfo.authors,
                                         book.volumeInfo.description,
                                         book.volumeInfo.imageLinks.thumbnail,
-                                        book.volumeInfo.previewLink)}
+                                        book.volumeInfo.infoLink)}
                                 />
                             ))
                         }

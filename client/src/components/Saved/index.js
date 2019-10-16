@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./Saved.css";
 import Book from '../Book';
 import axios from 'axios';
 
@@ -39,6 +40,7 @@ const Saved = (props) => {
                             title={book.title}
                             description={book.description}
                             author={book.author}
+                            bookLink={book.link}
                             handleSaveDelete={() => handleDelete(book._id)}
                         />
                     ))

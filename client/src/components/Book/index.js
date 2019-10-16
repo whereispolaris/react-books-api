@@ -18,7 +18,7 @@ const Book = (props) => {
                 </div>
                 <div className="col-md-1">
                     <button onClick={props.handleSaveDelete} type="button" className="btn btn-secondary">{props.isSaved ? "Delete Book" : "Save Book"}</button>
-                    <button type="button" className="btn btn-dark">View Book</button>
+                    <a href={props.bookLink} className="btn btn-dark" target="_blank">View Book</a>
                 </div>
             </div>
         </div>
