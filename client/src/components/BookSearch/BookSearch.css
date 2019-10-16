@@ -1,0 +1,14 @@
+.card-header {
+    font-family: "Courier New";
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.search-btn {
+    font-family: "Courier New";
+    font-weight: 800;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    
+}

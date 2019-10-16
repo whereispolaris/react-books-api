@@ -10,3 +10,15 @@
 h1 {
     font-family: 'trattatelloregular';
 }
+
+.jumbo-btn {
+    font-family: "Courier New";
+    font-weight: 800;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.lead {
+    margin-top: 20px;
+}

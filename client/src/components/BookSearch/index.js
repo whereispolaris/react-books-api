@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./BookSearch.css";
 import Book from "../Book";
 const axios = require('axios');
 
@@ -61,7 +62,7 @@ class BookSearch extends Component {
                                     onChange={this.handleValueChange}
                                 />
                             </div>
-                            <button onClick={this.handleFormSubmit}>Search</button>
+                            <button className="btn-dark search-btn" onClick={this.handleFormSubmit}>Search</button>
                         </form>
                     </div>
                 </div>
