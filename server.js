@@ -32,7 +32,6 @@ if (process.env.NODE_ENV === "production") {
 app.get("/api/books/:book", (req, res) => {
   axios.get("https://www.googleapis.com/books/v1/volumes?q=" + req.params.book)
     .then((response) => {
-      console.log("response", response.data)
       res.json(response.data);
     })
     .catch((error) => {
