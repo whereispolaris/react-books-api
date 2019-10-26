@@ -42,4 +42,4 @@ class ModalExample extends React.Component {
     }
 }
 
-export default Modal;
+export default ModalExample;
