@@ -6,7 +6,7 @@ React-based Google Books Search app that returns book data from the Google Books
 
 
 Deployed Application:
-https://react-express-books-api.herokuapp.com/
+http://react-express-books-api.herokuapp.com/
 
 ### Technologies Used
 - React
